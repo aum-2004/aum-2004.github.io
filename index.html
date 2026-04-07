@@ -1739,7 +1739,7 @@ const PROJECT_DATA = [
     num:'03', title:'Currency Converter', badge:'Completed', badgeClass:'',
     desc:'A Java-based desktop application integrating live exchange rate APIs. Structured for easy extension to support features like historical rate lookups. Clean architecture with separation of concerns.',
     tech:['Java','REST API','Desktop App'],
-    github:'https://github.com/aum-2004/currency-converter', live: null
+    github:'https://github.com/aum-2004/currency-converter', live: 'https://aum-2004.github.io/currency-converter/'
   },
   {
     num:'04', title:'Algorithm Visualizer', badge:'Completed', badgeClass:'',
@@ -1795,7 +1795,9 @@ document.querySelectorAll('.project-card[data-project]').forEach(card => {
     const ghBtn = p.github
       ? `<a href="${p.github}" target="_blank" rel="noopener noreferrer" class="modal-action-btn primary">⌥ GitHub Repo</a>`
       : `<span class="modal-action-btn disabled">⌥ GitHub — Coming Soon</span>`;
-    const liveBtn = `<span class="modal-action-btn disabled">▶ Run Online — Coming Soon</span>`;
+    const liveBtn = p.live
+      ? `<a href="${p.live}" target="_blank" rel="noopener noreferrer" class="modal-action-btn">▶ Run Online</a>`
+      : `<span class="modal-action-btn disabled">▶ Run Online — Coming Soon</span>`;
     openModal(`
       <div class="modal-project-meta">
         <span class="modal-project-num">${p.num}</span>
@@ -1809,7 +1811,7 @@ document.querySelectorAll('.project-card[data-project]').forEach(card => {
         ${ghBtn}
         ${liveBtn}
       </div>
-      <p class="modal-coming-soon">▶ Run Online will be available in a future update.</p>
+      ${p.live ? '' : '<p class="modal-coming-soon">▶ Run Online will be available in a future update.</p>'}
     `);
   });
 });
