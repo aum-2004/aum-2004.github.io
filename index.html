@@ -9,19 +9,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #020b18;
-    --surface: #051527;
-    --accent: #00d4ff;
-    --accent2: #0088cc;
-    --accent3: #7c3aed;
-    --text: #e2f4ff;
-    --muted: #4a7fa0;
-    --border: rgba(0,212,255,0.15);
+    --bg: #09090b;
+    --surface: #18181b;
+    --accent: #fafafa;
+    --accent2: #d4d4d8;
+    --accent3: #a855f7;
+    --text: #f4f4f5;
+    --muted: #71717a;
+    --border: rgba(250,250,250,0.1);
     --mono: 'Space Mono', monospace;
     --sans: 'Syne', sans-serif;
   }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; cursor: none !important; }
 
   html { scroll-behavior: smooth; }
 
@@ -76,7 +76,7 @@
     z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 1.2rem 4rem;
-    background: rgba(2,11,24,0.85);
+    background: rgba(9,9,11,0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
@@ -124,7 +124,7 @@
   .hero-bg-glow {
     position: absolute;
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(250,250,250,0.08) 0%, transparent 70%);
     top: -100px; right: -100px;
     pointer-events: none;
     animation: pulse-glow 4s ease-in-out infinite alternate;
@@ -132,7 +132,7 @@
   .hero-bg-glow2 {
     position: absolute;
     width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(0,136,204,0.07) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(212,212,216,0.07) 0%, transparent 70%);
     bottom: 0; left: 200px;
     pointer-events: none;
     animation: pulse-glow 5s ease-in-out infinite alternate-reverse;
@@ -311,7 +311,11 @@
     border-radius: 0 4px 4px 0;
     transition: transform 0.25s, border-color 0.25s;
   }
-  .edu-card:hover { transform: translateX(6px); }
+  .edu-card:hover {
+    transform: translateX(6px);
+    box-shadow: 0 0 18px rgba(250,250,250,0.08), 0 0 40px rgba(250,250,250,0.04), inset 0 0 0 1px rgba(250,250,250,0.12);
+    border-color: rgba(250,250,250,0.35);
+  }
   .edu-card:nth-child(2) { border-left-color: var(--accent2); }
   .edu-card:nth-child(3) { border-left-color: var(--accent3); }
   .edu-school {
@@ -327,7 +331,7 @@
   }
   .gpa-badge {
     display: inline-block;
-    background: rgba(0,212,255,0.1);
+    background: rgba(250,250,250,0.1);
     color: var(--accent);
     font-family: var(--mono);
     font-size: 0.65rem;
@@ -359,7 +363,7 @@
     height: 2px;
     background: linear-gradient(to right, var(--accent), var(--accent2));
   }
-  .skill-category:hover { border-color: rgba(0,212,255,0.4); transform: translateY(-4px); }
+  .skill-category:hover { border-color: rgba(250,250,250,0.4); transform: translateY(-4px); }
   .skill-cat-title {
     font-family: var(--mono);
     font-size: 0.7rem;
@@ -377,10 +381,10 @@
     letter-spacing: 1px;
     transition: all 0.2s;
   }
-  .tag-lang { background: rgba(0,212,255,0.08); color: var(--accent); border: 1px solid rgba(0,212,255,0.2); }
-  .tag-tool { background: rgba(0,136,204,0.08); color: #38bdf8; border: 1px solid rgba(0,136,204,0.2); }
+  .tag-lang { background: rgba(250,250,250,0.08); color: var(--accent); border: 1px solid rgba(250,250,250,0.2); }
+  .tag-tool { background: rgba(212,212,216,0.08); color: #e4e4e7; border: 1px solid rgba(212,212,216,0.2); }
   .tag-concept { background: rgba(124,58,237,0.08); color: #a78bfa; border: 1px solid rgba(124,58,237,0.2); }
-  .tag-other { background: rgba(52,211,153,0.08); color: #34d399; border: 1px solid rgba(52,211,153,0.2); }
+  .tag-other { background: rgba(250,250,250,0.08); color: #34d399; border: 1px solid rgba(250,250,250,0.2); }
   .skill-tag:hover { transform: scale(1.05); }
 
   /* PROJECTS */
@@ -405,11 +409,11 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0,212,255,0.04) 0%, transparent 60%);
+    background: linear-gradient(135deg, rgba(250,250,250,0.04) 0%, transparent 60%);
     opacity: 0;
     transition: opacity 0.35s;
   }
-  .project-card:hover { transform: translateY(-6px); border-color: rgba(0,212,255,0.35); box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,212,255,0.1); }
+  .project-card:hover { transform: translateY(-6px); border-color: rgba(250,250,250,0.35); box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(250,250,250,0.1); }
   .project-card:hover::after { opacity: 1; }
   .project-num {
     font-family: var(--mono);
@@ -437,9 +441,9 @@
     letter-spacing: 2px;
     padding: 0.2rem 0.6rem;
     border-radius: 2px;
-    background: rgba(0,212,255,0.1);
-    color: #67e8f9;
-    border: 1px solid rgba(0,212,255,0.2);
+    background: rgba(250,250,250,0.1);
+    color: #e4e4e7;
+    border: 1px solid rgba(250,250,250,0.2);
     text-transform: uppercase;
     width: fit-content;
   }
@@ -500,7 +504,7 @@
     background: var(--accent);
     border-radius: 50%;
     border: 2px solid var(--bg);
-    box-shadow: 0 0 0 4px rgba(0,212,255,0.15);
+    box-shadow: 0 0 0 4px rgba(250,250,250,0.15);
   }
   .exp-date {
     font-family: var(--mono);
@@ -556,7 +560,7 @@
     transform-origin: left;
   }
   .cert-card:hover::before { transform: scaleX(1); }
-  .cert-card:hover { border-color: rgba(0,212,255,0.3); transform: translateY(-3px); }
+  .cert-card:hover { border-color: rgba(250,250,250,0.3); transform: translateY(-3px); }
   .cert-icon { font-size: 1.8rem; flex-shrink: 0; }
   .cert-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.3rem; }
   .cert-issuer { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); letter-spacing: 1px; }
@@ -565,12 +569,12 @@
     font-family: var(--mono);
     font-size: 0.58rem;
     padding: 0.15rem 0.5rem;
-    background: rgba(0,212,255,0.1);
-    color: #67e8f9;
+    background: rgba(250,250,250,0.1);
+    color: #e4e4e7;
     border-radius: 2px;
     margin-top: 0.4rem;
     letter-spacing: 1px;
-    border: 1px solid rgba(0,212,255,0.2);
+    border: 1px solid rgba(250,250,250,0.2);
   }
   .cert-status.in-prog { background: rgba(124,58,237,0.1); color: #a78bfa; border-color: rgba(124,58,237,0.2); }
 
@@ -604,7 +608,7 @@
     transition: all 0.2s;
     display: flex; align-items: center; gap: 0.5rem;
   }
-  .contact-link:hover { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,0.04); }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); background: rgba(250,250,250,0.04); }
 
   /* FOOTER */
   footer {
@@ -647,20 +651,20 @@
   /* TERMINAL */
   .terminal-section { margin-top: 3.5rem; display: flex; flex-direction: column; align-items: center; }
   .terminal-wrap {
-    background: #010d1a;
-    border: 1px solid rgba(0,212,255,0.12);
+    background: #09090b;
+    border: 1px solid rgba(250,250,250,0.12);
     border-radius: 4px;
     overflow: hidden;
     width: 100%;
     max-width: 960px;
   }
   .term-bar {
-    background: #030f1f;
+    background: #18181b;
     padding: .65rem 1.2rem;
     display: flex;
     align-items: center;
     gap: .5rem;
-    border-bottom: 1px solid rgba(0,212,255,0.08);
+    border-bottom: 1px solid rgba(250,250,250,0.08);
   }
   .term-dot { width: 10px; height: 10px; border-radius: 50%; }
   .td-red    { background: #ff5f57; }
@@ -669,7 +673,7 @@
   .term-title {
     font-family: var(--mono);
     font-size: .65rem;
-    color: rgba(224,244,255,.35);
+    color: rgba(244,244,245,.35);
     letter-spacing: .08em;
     margin-left: auto;
     margin-right: auto;
@@ -679,20 +683,20 @@
     font-family: var(--mono);
     font-size: .85rem;
     line-height: 1.9;
-    color: rgba(224,244,255,.75);
+    color: rgba(244,244,245,.75);
     min-height: 320px;
     max-height: 440px;
     overflow-y: auto;
   }
   .term-body::-webkit-scrollbar { width: 3px; }
-  .term-body::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.2); }
+  .term-body::-webkit-scrollbar-thumb { background: rgba(250,250,250,0.2); }
   .term-line { display: block; margin-bottom: .1rem; }
   .term-prompt { color: var(--accent); }
-  .term-cmd    { color: rgba(224,244,255,.9); }
-  .term-out    { color: rgba(224,244,255,.45); padding-left: 1.2rem; }
+  .term-cmd    { color: rgba(244,244,245,.9); }
+  .term-out    { color: rgba(244,244,245,.45); padding-left: 1.2rem; }
   .term-out.hi  { color: var(--accent3); padding-left: 0; }
   .term-out.err { color: #ff5f57; padding-left: 0; }
-  .term-out.acc { color: #67e8f9; padding-left: 0; }
+  .term-out.acc { color: #e4e4e7; padding-left: 0; }
   .term-input-row {
     display: flex;
     align-items: center;
@@ -713,14 +717,14 @@
     outline: none;
     font-family: var(--mono);
     font-size: .85rem;
-    color: rgba(224,244,255,.9);
+    color: rgba(244,244,245,.9);
     caret-color: var(--accent);
     min-width: 0;
   }
   .term-talk-label {
     font-family: var(--mono);
     font-size: .75rem;
-    color: rgba(224,244,255,.45);
+    color: rgba(244,244,245,.45);
     letter-spacing: .12em;
     text-align: center;
     text-transform: uppercase;
@@ -729,22 +733,214 @@
   .term-hint {
     font-family: var(--mono);
     font-size: .62rem;
-    color: rgba(224,244,255,.3);
+    color: rgba(244,244,245,.3);
     letter-spacing: .05em;
     text-align: center;
     margin-top: 0.8rem;
   }
   .term-hint code { color: var(--accent); }
 
-  @media (max-width: 768px) {
+  /* Skill card — expand hint */
+  .skill-category { position: relative; }
+  .skill-expand-hint {
+    position: absolute; top: 1rem; right: 1rem;
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 1px;
+    color: var(--muted); opacity: 0; transition: opacity 0.2s;
+    pointer-events: none;
+  }
+  .skill-category:hover .skill-expand-hint { opacity: 1; }
+
+  /* Modal overlay */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.25s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+  .modal-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem 2rem 1.75rem;
+    max-width: 560px; width: 92%;
+    max-height: 82vh; overflow-y: auto;
+    position: relative;
+    transform: translateY(24px) scale(0.97);
+    transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  }
+  .modal-overlay.open .modal-box { transform: translateY(0) scale(1); }
+  .modal-close {
+    position: absolute; top: 1rem; right: 1rem;
+    background: none; border: 1px solid var(--border);
+    color: var(--muted); font-family: var(--mono); font-size: 0.85rem;
+    width: 2rem; height: 2rem; border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+  .modal-close:hover { border-color: var(--accent); color: var(--accent); }
+  .modal-label {
+    font-family: var(--mono); font-size: 0.65rem;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.5rem;
+  }
+  .modal-heading {
+    font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem;
+  }
+
+  /* Skills modal */
+  .modal-skill-grid { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+  .modal-skill-btn {
+    display: flex; align-items: center; gap: 0.55rem;
+    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.5px;
+    padding: 0.5rem 0.9rem; border-radius: 4px;
+    text-decoration: none; border: 1px solid var(--border);
+    color: var(--text); background: var(--bg);
+    transition: all 0.2s;
+  }
+  .modal-skill-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+  .modal-skill-btn img { width: 18px; height: 18px; object-fit: contain; }
+  .modal-skill-btn .s-icon { font-size: 1rem; line-height: 1; }
+
+  /* Project modal */
+  .modal-project-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.4rem; }
+  .modal-project-num { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); letter-spacing: 2px; }
+  .modal-project-desc { color: var(--muted); font-size: 0.9rem; line-height: 1.7; margin: 1rem 0 1.25rem; }
+  .modal-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+  .modal-divider { height: 1px; background: var(--border); margin: 1.25rem 0; }
+  .modal-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+  .modal-action-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 1px;
+    padding: 0.6rem 1.1rem; border-radius: 4px;
+    text-decoration: none; border: 1px solid var(--border);
+    color: var(--text); background: var(--bg); transition: all 0.2s;
+  }
+  .modal-action-btn:hover:not(.disabled) { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+  .modal-action-btn.primary { background: var(--accent); color: #000; border-color: var(--accent); font-weight: 700; }
+  .modal-action-btn.primary:hover { background: transparent; color: var(--accent); }
+  .modal-action-btn.disabled { opacity: 0.35; pointer-events: none; font-style: italic; }
+  .modal-coming-soon { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 1px; margin-top: 0.6rem; }
+
+  /* Hamburger button */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+    z-index: 200;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Tablet: tighten nav before hamburger kicks in */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 2rem; }
+    .nav-links { gap: 1.5rem; }
+    .nav-links a { font-size: 0.68rem; letter-spacing: 1px; }
+    section { padding: 6rem 2.5rem; }
+    .hero { padding: 8rem 2.5rem 4rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Mobile: hamburger menu */
+  @media (max-width: 680px) {
     nav { padding: 1rem 1.5rem; }
-    .nav-links { gap: 1.2rem; }
-    .nav-links a { font-size: 0.65rem; }
+    .nav-hamburger { display: flex; }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 56px; left: 0; right: 0;
+      background: rgba(13,17,23,0.98);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      padding: 1.5rem 0;
+      z-index: 99;
+      gap: 0;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      padding: 0.9rem 2rem;
+      width: 100%;
+      text-align: left;
+    }
+    .nav-links a::after { display: none; }
+
     section { padding: 5rem 1.5rem; }
-    .hero { padding: 7rem 1.5rem 4rem; }
-    .hero-stats { right: 1.5rem; bottom: 1.5rem; gap: 1.5rem; }
-    .about-grid { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .hero {
+      padding: 7rem 1.5rem 4rem;
+      min-height: auto;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 0;
+    }
+    .hero-content { max-width: 100%; }
+    .hero-desc { font-size: 1rem; }
+    .hero-cta { flex-direction: column; gap: 0.75rem; }
+    .btn { width: 100%; justify-content: center; }
+
+    .hero-stats {
+      position: relative;
+      right: auto; bottom: auto;
+      display: flex;
+      justify-content: flex-start;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      width: 100%;
+    }
+    .stat { text-align: left; }
+    .stat-number { font-size: 2rem; }
+
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .certs-grid { grid-template-columns: 1fr; }
+
+    .terminal-wrap { font-size: 0.78rem; }
+    .term-body { min-height: 260px; max-height: 340px; padding: 1rem; font-size: 0.78rem; }
+    .term-input-row { padding: 0 1rem 1rem; }
+    .term-input-prompt { font-size: 0.78rem; }
+    #term-input { font-size: 0.78rem; }
+
+    .exp-timeline { padding-left: 1.2rem; }
+    .exp-item { padding: 0 0 2.5rem 1.8rem; }
+    .exp-dot { left: -1.85rem; }
+
+    footer {
+      flex-direction: column;
+      gap: 0.75rem;
+      text-align: center;
+      padding: 1.5rem;
+    }
+  }
+
+  /* Small mobile */
+  @media (max-width: 400px) {
+    .hero-title { letter-spacing: -1px; }
+    .hero-stats { gap: 1.5rem; }
+    .stat-number { font-size: 1.7rem; }
+    .section-title { font-size: 2rem; }
+    .term-body { font-size: 0.72rem; }
+    nav { padding: 0.8rem 1rem; }
   }
 </style>
 </head>
@@ -757,13 +953,17 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">AUM<span>.</span></div>
-  <div class="nav-links">
+  <div class="nav-links" id="nav-links">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
+    <a href="#certifications">Certs</a>
     <a href="#contact">Contact</a>
   </div>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -783,6 +983,7 @@
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View Projects →</a>
       <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      <a href="https://drive.google.com/file/d/10upixX7DrTtOmpGwTDHnfo2BwCeZbrkQ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Resume ↓</a>
     </div>
   </div>
   <div class="hero-stats">
@@ -816,21 +1017,21 @@
       <p class="reveal reveal-delay-2">When I'm not coding, I'm probably optimizing something, visualizing an algorithm, or figuring out how to make systems talk to each other more efficiently.</p>
     </div>
     <div class="education-cards">
-      <div class="edu-card reveal reveal-delay-1">
+      <a href="https://www.njit.edu/" target="_blank" rel="noopener noreferrer" class="edu-card reveal reveal-delay-1" style="text-decoration:none;color:inherit;display:block;">
         <div class="edu-school">New Jersey Institute of Technology</div>
         <div class="edu-detail">BS Computer Science · Newark, NJ · Expected May 2027</div>
         <div class="gpa-badge">GPA: 3.85</div>
-      </div>
-      <div class="edu-card reveal reveal-delay-2">
+      </a>
+      <a href="https://hccc.edu/" target="_blank" rel="noopener noreferrer" class="edu-card reveal reveal-delay-2" style="text-decoration:none;color:inherit;display:block;">
         <div class="edu-school">Hudson County Community College</div>
         <div class="edu-detail">Computer Science Coursework · Jersey City, NJ · 2024</div>
-        <div class="gpa-badge" style="background:rgba(0,136,204,0.1);color:#38bdf8;border-color:rgba(0,136,204,0.3)">GPA: 3.69</div>
-      </div>
-      <div class="edu-card reveal reveal-delay-3">
+        <div class="gpa-badge" style="background:rgba(212,212,216,0.1);color:#e4e4e7;border-color:rgba(212,212,216,0.3)">GPA: 3.69</div>
+      </a>
+      <a href="https://www.njcu.edu/" target="_blank" rel="noopener noreferrer" class="edu-card reveal reveal-delay-3" style="text-decoration:none;color:inherit;display:block;">
         <div class="edu-school">New Jersey City University</div>
         <div class="edu-detail">Computer Science Coursework · Jersey City, NJ · 2023</div>
         <div class="gpa-badge" style="background:rgba(124,58,237,0.1);color:#a78bfa;border-color:rgba(124,58,237,0.3)">GPA: 4.0</div>
-      </div>
+      </a>
     </div>
   </div>
 
@@ -876,46 +1077,51 @@
   <div class="section-divider reveal"></div>
   <h2 class="section-title reveal">Tech <span>Stack</span></h2>
   <div class="skills-grid">
-    <div class="skill-category reveal">
-      <div class="skill-cat-title">Languages</div>
+    <div class="skill-category reveal" data-category="lang">
+      <span class="skill-expand-hint">EXPAND ↗</span>
+      <div class="skill-cat-title">Programming Languages</div>
       <div class="skill-tags">
-        <span class="skill-tag tag-lang">Python</span>
-        <span class="skill-tag tag-lang">Java</span>
-        <span class="skill-tag tag-lang">SQL</span>
-        <span class="skill-tag tag-lang">C++</span>
-        <span class="skill-tag tag-lang">JavaScript</span>
-        <span class="skill-tag tag-lang">HTML/CSS</span>
+        <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-lang" style="text-decoration:none;">Python</a>
+        <a href="https://dev.java/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-lang" style="text-decoration:none;">Java</a>
+        <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-lang" style="text-decoration:none;">SQL/MySQL</a>
+        <a href="https://isocpp.org/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-lang" style="text-decoration:none;">C++</a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="skill-tag tag-lang" style="text-decoration:none;">JavaScript</a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" class="skill-tag tag-lang" style="text-decoration:none;">HTML</a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer" class="skill-tag tag-lang" style="text-decoration:none;">CSS</a>
       </div>
     </div>
-    <div class="skill-category reveal reveal-delay-1">
+    <div class="skill-category reveal reveal-delay-1" data-category="tool">
+      <span class="skill-expand-hint">EXPAND ↗</span>
       <div class="skill-cat-title">Tools & Environment</div>
       <div class="skill-tags">
-        <span class="skill-tag tag-tool">Git/GitHub</span>
-        <span class="skill-tag tag-tool">Linux</span>
-        <span class="skill-tag tag-tool">IntelliJ IDEA</span>
-        <span class="skill-tag tag-tool">PyCharm</span>
-        <span class="skill-tag tag-tool">VS Code</span>
-        <span class="skill-tag tag-tool">JetBrains Fleet</span>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">Git/GitHub</a>
+        <a href="https://www.linux.org/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">Linux</a>
+        <a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">IntelliJ IDEA</a>
+        <a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">PyCharm</a>
+        <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">VS Code</a>
+        <a href="https://www.jetbrains.com/fleet/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">JetBrains Fleet</a>
       </div>
     </div>
-    <div class="skill-category reveal reveal-delay-2">
+    <div class="skill-category reveal reveal-delay-2" data-category="concept">
+      <span class="skill-expand-hint">EXPAND ↗</span>
       <div class="skill-cat-title">Concepts</div>
       <div class="skill-tags">
-        <span class="skill-tag tag-concept">DSA</span>
-        <span class="skill-tag tag-concept">OOP</span>
-        <span class="skill-tag tag-concept">OS</span>
-        <span class="skill-tag tag-concept">Networking</span>
-        <span class="skill-tag tag-concept">Data Science</span>
-        <span class="skill-tag tag-concept">DB Design</span>
-        <span class="skill-tag tag-concept">Discrete Math</span>
+        <a href="https://en.wikipedia.org/wiki/Data_structure" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">DSA</a>
+        <a href="https://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">OOP</a>
+        <a href="https://en.wikipedia.org/wiki/Operating_system" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">OS</a>
+        <a href="https://en.wikipedia.org/wiki/Computer_network" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">Networking</a>
+        <a href="https://en.wikipedia.org/wiki/Data_science" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">Data Science</a>
+        <a href="https://en.wikipedia.org/wiki/Database_design" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">DB Design</a>
+        <a href="https://en.wikipedia.org/wiki/Discrete_mathematics" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">Discrete Math</a>
       </div>
     </div>
-    <div class="skill-category reveal reveal-delay-3">
+    <div class="skill-category reveal reveal-delay-3" data-category="other">
+      <span class="skill-expand-hint">EXPAND ↗</span>
       <div class="skill-cat-title">Languages (Spoken)</div>
       <div class="skill-tags">
-        <span class="skill-tag tag-other">English</span>
-        <span class="skill-tag tag-other">Gujarati</span>
-        <span class="skill-tag tag-other">Hindi</span>
+        <a href="https://en.wikipedia.org/wiki/English_language" target="_blank" rel="noopener noreferrer" class="skill-tag tag-other" style="text-decoration:none;">English</a>
+        <a href="https://en.wikipedia.org/wiki/Gujarati_language" target="_blank" rel="noopener noreferrer" class="skill-tag tag-other" style="text-decoration:none;">Gujarati</a>
+        <a href="https://en.wikipedia.org/wiki/Hindi" target="_blank" rel="noopener noreferrer" class="skill-tag tag-other" style="text-decoration:none;">Hindi</a>
       </div>
     </div>
   </div>
@@ -928,7 +1134,7 @@
   <h2 class="section-title reveal">What I've <span>Built</span></h2>
   <div class="projects-grid">
 
-    <div class="project-card reveal">
+    <div class="project-card reveal" data-project="0">
       <span class="project-arrow">↗</span>
       <div class="project-num">01</div>
       <div class="project-title-wrap">
@@ -944,7 +1150,7 @@
       </div>
     </div>
 
-    <div class="project-card reveal reveal-delay-1">
+    <div class="project-card reveal reveal-delay-1" data-project="1">
       <span class="project-arrow">↗</span>
       <div class="project-num">02</div>
       <div class="project-title-wrap">
@@ -960,7 +1166,7 @@
       </div>
     </div>
 
-    <a href="https://github.com/aum-2004/currency-converter" target="_blank" rel="noopener noreferrer" class="project-card reveal reveal-delay-2" style="text-decoration:none;color:inherit;">
+    <div class="project-card reveal reveal-delay-2" data-project="2">
       <span class="project-arrow">↗</span>
       <div class="project-num">03</div>
       <div class="project-title-wrap">
@@ -973,9 +1179,9 @@
         <span class="tech-chip">REST API</span>
         <span class="tech-chip">Desktop App</span>
       </div>
-    </a>
+    </div>
 
-    <div class="project-card reveal reveal-delay-3">
+    <div class="project-card reveal reveal-delay-3" data-project="3">
       <span class="project-arrow">↗</span>
       <div class="project-num">04</div>
       <div class="project-title-wrap">
@@ -1072,10 +1278,18 @@
   </div>
 </section>
 
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
 <footer>
-  <span>© 2025 Aryan Modi</span>
+  <span>© <span id="footer-year"></span> Aryan Modi</span>
   <span>Built with code, caffeine & curiosity</span>
-  <span>+1 (551) 388-6121</span>
+  <span><a href="mailto:aumodi2004@gmail.com" style="color:var(--muted);text-decoration:none;">aumodi2004@gmail.com</a></span>
 </footer>
 </main>
 
@@ -1214,7 +1428,7 @@ const COMMANDS = {
     { t:'out', s:'Email     aumodi2004@gmail.com' },
     { t:'out', s:'LinkedIn  linkedin.com/in/aumodi' },
     { t:'out', s:'GitHub    github.com/aum-2004' },
-    { t:'out', s:'Phone     +1 (551) 388-6121' },
+    { t:'out', s:'Email     aumodi2004@gmail.com' },
   ],
   gpa: () => [
     { t:'hi',  s:'Academic Record:' },
@@ -1293,7 +1507,7 @@ function aiSimulate(input) {
   if (/gpa|grades?|school|education|college|njit|university|academic/.test(q))
     return ["Academic record:", "  NJIT  →  3.85 GPA · BS CS · Expected May 2027", "  HCCC  →  3.69 GPA · CS Coursework · 2024", "  NJCU  →  4.00 GPA · CS Coursework · 2023"];
   if (/contact|email|reach|hire|linkedin|github|phone/.test(q))
-    return ["How to reach Aryan:", "  Email     →  aumodi2004@gmail.com", "  LinkedIn  →  linkedin.com/in/aumodi", "  GitHub    →  github.com/aum-2004", "  Phone     →  +1 (551) 388-6121"];
+    return ["How to reach Aryan:", "  Email     →  aumodi2004@gmail.com", "  LinkedIn  →  linkedin.com/in/aumodi", "  GitHub    →  github.com/aum-2004"];
   if (/experience|jobs?|worked?|internships?|employ|hccc|harmony/.test(q))
     return ["Work experience:", "  Lab Assistant · HCCC · Feb–Dec 2024", "    Maintained 50+ workstations · Improved adoption 20%", "  Data Assistant · Harmony Suites · Summer 2023", "    Digitized organizational records into structured datasets"];
   if (/available|open to|looking for|hiring|status|opportunit|internship/.test(q))
@@ -1450,6 +1664,167 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       e.preventDefault();
       window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
     }
+  });
+});
+
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+// ── MODAL SYSTEM ──────────────────────────────────────────
+const DI = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/';
+
+const SKILL_DATA = {
+  lang: {
+    label: '02 — Skills',
+    title: 'Programming Languages',
+    items: [
+      { name:'Python',     url:'https://www.python.org/',                                           logo: DI+'python/python-original.svg' },
+      { name:'Java',       url:'https://dev.java/',                                                 logo: DI+'java/java-original.svg' },
+      { name:'SQL/MySQL',  url:'https://www.mysql.com/',                                            logo: DI+'mysql/mysql-original.svg' },
+      { name:'C++',        url:'https://isocpp.org/',                                               logo: DI+'cplusplus/cplusplus-original.svg' },
+      { name:'JavaScript', url:'https://developer.mozilla.org/en-US/docs/Web/JavaScript',           logo: DI+'javascript/javascript-original.svg' },
+      { name:'HTML',       url:'https://developer.mozilla.org/en-US/docs/Web/HTML',                 logo: DI+'html5/html5-original.svg' },
+      { name:'CSS',        url:'https://developer.mozilla.org/en-US/docs/Web/CSS',                  logo: DI+'css3/css3-original.svg' },
+    ]
+  },
+  tool: {
+    label: '02 — Skills',
+    title: 'Tools & Environment',
+    items: [
+      { name:'Git/GitHub',      url:'https://github.com/',                        logo: DI+'github/github-original.svg' },
+      { name:'Linux',           url:'https://www.linux.org/',                     logo: DI+'linux/linux-original.svg' },
+      { name:'IntelliJ IDEA',   url:'https://www.jetbrains.com/idea/',            logo: DI+'intellij/intellij-original.svg' },
+      { name:'PyCharm',         url:'https://www.jetbrains.com/pycharm/',         logo: DI+'pycharm/pycharm-original.svg' },
+      { name:'VS Code',         url:'https://code.visualstudio.com/',             logo: DI+'vscode/vscode-original.svg' },
+      { name:'JetBrains Fleet', url:'https://www.jetbrains.com/fleet/',           logo: DI+'jetbrains/jetbrains-original.svg' },
+    ]
+  },
+  concept: {
+    label: '02 — Skills',
+    title: 'Concepts',
+    items: [
+      { name:'DSA',           url:'https://en.wikipedia.org/wiki/Data_structure',               icon:'🔢' },
+      { name:'OOP',           url:'https://en.wikipedia.org/wiki/Object-oriented_programming',  icon:'🧩' },
+      { name:'OS',            url:'https://en.wikipedia.org/wiki/Operating_system',             icon:'💻' },
+      { name:'Networking',    url:'https://en.wikipedia.org/wiki/Computer_network',             icon:'🌐' },
+      { name:'Data Science',  url:'https://en.wikipedia.org/wiki/Data_science',                icon:'📊' },
+      { name:'DB Design',     url:'https://en.wikipedia.org/wiki/Database_design',             icon:'🗄️' },
+      { name:'Discrete Math', url:'https://en.wikipedia.org/wiki/Discrete_mathematics',        icon:'∑' },
+    ]
+  },
+  other: {
+    label: '02 — Skills',
+    title: 'Languages (Spoken)',
+    items: [
+      { name:'English',  url:'https://en.wikipedia.org/wiki/English_language',  icon:'🇺🇸' },
+      { name:'Gujarati', url:'https://en.wikipedia.org/wiki/Gujarati_language', icon:'🇮🇳' },
+      { name:'Hindi',    url:'https://en.wikipedia.org/wiki/Hindi',             icon:'🇮🇳' },
+    ]
+  }
+};
+
+const PROJECT_DATA = [
+  {
+    num:'01', title:'AI Multilingual Voice Assistant', badge:'In Progress', badgeClass:'in-progress',
+    desc:'A cross-language voice assistant supporting multiple languages using SpeechRecognition and pyttsx3. Features modular commands for opening apps, answering queries, and performing web searches. Designed for scalability with a plug-in architecture.',
+    tech:['Python','SpeechRecognition','pyttsx3','AI/ML'],
+    github: null, live: null
+  },
+  {
+    num:'02', title:'Chat Application', badge:'Completed', badgeClass:'',
+    desc:'A real-time chat platform supporting concurrent clients with sockets and multi-threading. Includes user authentication, error handling, and message broadcasting. Benchmarked to handle multiple concurrent users with minimal latency.',
+    tech:['Java','Sockets','Multi-threading','Client/Server'],
+    github: null, live: null
+  },
+  {
+    num:'03', title:'Currency Converter', badge:'Completed', badgeClass:'',
+    desc:'A Java-based desktop application integrating live exchange rate APIs. Structured for easy extension to support features like historical rate lookups. Clean architecture with separation of concerns.',
+    tech:['Java','REST API','Desktop App'],
+    github:'https://github.com/aum-2004/currency-converter', live: null
+  },
+  {
+    num:'04', title:'Algorithm Visualizer', badge:'Completed', badgeClass:'',
+    desc:'An interactive tool to visualize sorting and graph algorithms step-by-step. Built with Python and Tkinter, featuring smooth animations of algorithm execution — making DSA concepts tangible and intuitive.',
+    tech:['Python','Tkinter','Algorithms','Visualization'],
+    github: null, live: null
+  }
+];
+
+const overlay   = document.getElementById('modal-overlay');
+const modalContent = document.getElementById('modal-content');
+const closeBtn  = document.getElementById('modal-close');
+
+function openModal(html) {
+  modalContent.innerHTML = html;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+closeBtn.addEventListener('click', closeModal);
+overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// Skill card click
+document.querySelectorAll('.skill-category[data-category]').forEach(card => {
+  card.addEventListener('click', e => {
+    if (e.target.closest('a')) return; // let skill-tag links work normally
+    const cat = SKILL_DATA[card.dataset.category];
+    if (!cat) return;
+    const chips = cat.items.map(item => {
+      const media = item.logo
+        ? `<img src="${item.logo}" alt="${item.name}" onerror="this.style.display='none'">`
+        : `<span class="s-icon">${item.icon}</span>`;
+      return `<a href="${item.url}" target="_blank" rel="noopener noreferrer" class="modal-skill-btn">${media}${item.name}</a>`;
+    }).join('');
+    openModal(`
+      <div class="modal-label">${cat.label}</div>
+      <div class="modal-heading">${cat.title}</div>
+      <div class="modal-skill-grid">${chips}</div>
+    `);
+  });
+});
+
+// Project card click
+document.querySelectorAll('.project-card[data-project]').forEach(card => {
+  card.addEventListener('click', () => {
+    const p = PROJECT_DATA[parseInt(card.dataset.project)];
+    if (!p) return;
+    const techChips = p.tech.map(t => `<span class="tech-chip">${t}</span>`).join('');
+    const ghBtn = p.github
+      ? `<a href="${p.github}" target="_blank" rel="noopener noreferrer" class="modal-action-btn primary">⌥ GitHub Repo</a>`
+      : `<span class="modal-action-btn disabled">⌥ GitHub — Coming Soon</span>`;
+    const liveBtn = `<span class="modal-action-btn disabled">▶ Run Online — Coming Soon</span>`;
+    openModal(`
+      <div class="modal-project-meta">
+        <span class="modal-project-num">${p.num}</span>
+        <span class="project-badge ${p.badgeClass}">${p.badge}</span>
+      </div>
+      <div class="modal-heading">${p.title}</div>
+      <p class="modal-project-desc">${p.desc}</p>
+      <div class="modal-tech">${techChips}</div>
+      <div class="modal-divider"></div>
+      <div class="modal-actions">
+        ${ghBtn}
+        ${liveBtn}
+      </div>
+      <p class="modal-coming-soon">▶ Run Online will be available in a future update.</p>
+    `);
+  });
+});
+
+// Hamburger nav
+const hamburger = document.getElementById('nav-hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
   });
 });
 </script>
