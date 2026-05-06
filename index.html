@@ -306,18 +306,24 @@
   .edu-card {
     background: var(--bg);
     border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
+    border-left: 3px solid #ef4444;
     padding: 1.2rem 1.5rem;
     border-radius: 0 4px 4px 0;
-    transition: transform 0.25s, border-color 0.25s;
+    transition: transform 0.25s, border-top-color 0.25s, border-right-color 0.25s, border-bottom-color 0.25s;
   }
   .edu-card:hover {
     transform: translateX(6px);
     box-shadow: 0 0 18px rgba(250,250,250,0.08), 0 0 40px rgba(250,250,250,0.04), inset 0 0 0 1px rgba(250,250,250,0.12);
-    border-color: rgba(250,250,250,0.35);
+    border-top-color: rgba(250,250,250,0.25);
+    border-right-color: rgba(250,250,250,0.25);
+    border-bottom-color: rgba(250,250,250,0.25);
   }
-  .edu-card:nth-child(2) { border-left-color: var(--accent2); }
-  .edu-card:nth-child(3) { border-left-color: var(--accent3); }
+  .edu-card:nth-child(2) { border-left-color: #3b82f6; }
+  .edu-card:nth-child(3) { border-left-color: #a855f7; }
+  /* GPA badge colors per college */
+  .edu-card:nth-child(1) .gpa-badge { background: rgba(239,68,68,0.12); color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+  .edu-card:nth-child(2) .gpa-badge { background: rgba(59,130,246,0.12); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+  .edu-card:nth-child(3) .gpa-badge { background: rgba(168,85,247,0.12); color: #c084fc; border: 1px solid rgba(168,85,247,0.3); }
   .edu-school {
     font-weight: 700;
     font-size: 0.95rem;
@@ -441,9 +447,9 @@
     letter-spacing: 2px;
     padding: 0.2rem 0.6rem;
     border-radius: 2px;
-    background: rgba(250,250,250,0.1);
-    color: #e4e4e7;
-    border: 1px solid rgba(250,250,250,0.2);
+    background: rgba(74,222,128,0.1);
+    color: #4ade80;
+    border: 1px solid rgba(74,222,128,0.28);
     text-transform: uppercase;
     width: fit-content;
   }
@@ -1013,24 +1019,24 @@
   <div class="about-grid">
     <div class="about-text">
       <p class="reveal">Hey — I'm <strong>Aryan Modi</strong>, a Computer Science student at NJIT with a passion for building things that matter. From real-time chat systems to AI voice assistants, I love working across the full stack of software development.</p>
-      <p class="reveal reveal-delay-1">My go-to languages are <strong>Python, Java, SQL, C++, and JavaScript</strong> — and outside of coding, I'm fluent in English, Gujarati, and Hindi. Currently pursuing my BS in CS with a <strong>3.85 GPA</strong> while actively expanding into AI engineering.</p>
+      <p class="reveal reveal-delay-1">My go-to languages are <strong>Python, Java, SQL, C++, and JavaScript</strong> — and outside of coding, I'm fluent in English, Gujarati, and Hindi. Currently pursuing my BS in CS with a <strong>3.8 GPA</strong> while actively expanding into AI engineering.</p>
       <p class="reveal reveal-delay-2">When I'm not coding, I'm probably optimizing something, visualizing an algorithm, or figuring out how to make systems talk to each other more efficiently.</p>
     </div>
     <div class="education-cards">
       <a href="https://www.njit.edu/" target="_blank" rel="noopener noreferrer" class="edu-card reveal reveal-delay-1" style="text-decoration:none;color:inherit;display:block;">
         <div class="edu-school">New Jersey Institute of Technology</div>
         <div class="edu-detail">BS Computer Science · Newark, NJ · Expected May 2027</div>
-        <div class="gpa-badge">GPA: 3.85</div>
+        <div class="gpa-badge">GPA: 3.8</div>
       </a>
       <a href="https://hccc.edu/" target="_blank" rel="noopener noreferrer" class="edu-card reveal reveal-delay-2" style="text-decoration:none;color:inherit;display:block;">
         <div class="edu-school">Hudson County Community College</div>
         <div class="edu-detail">Computer Science Coursework · Jersey City, NJ · 2024</div>
-        <div class="gpa-badge" style="background:rgba(212,212,216,0.1);color:#e4e4e7;border-color:rgba(212,212,216,0.3)">GPA: 3.69</div>
+        <div class="gpa-badge">GPA: 3.69</div>
       </a>
       <a href="https://www.njcu.edu/" target="_blank" rel="noopener noreferrer" class="edu-card reveal reveal-delay-3" style="text-decoration:none;color:inherit;display:block;">
         <div class="edu-school">New Jersey City University</div>
         <div class="edu-detail">Computer Science Coursework · Jersey City, NJ · 2023</div>
-        <div class="gpa-badge" style="background:rgba(124,58,237,0.1);color:#a78bfa;border-color:rgba(124,58,237,0.3)">GPA: 4.0</div>
+        <div class="gpa-badge">GPA: 4.0</div>
       </a>
     </div>
   </div>
@@ -1086,8 +1092,11 @@
         <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-lang" style="text-decoration:none;">SQL/MySQL</a>
         <a href="https://isocpp.org/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-lang" style="text-decoration:none;">C++</a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="skill-tag tag-lang" style="text-decoration:none;">JavaScript</a>
+        <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-lang" style="text-decoration:none;">TypeScript</a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" class="skill-tag tag-lang" style="text-decoration:none;">HTML</a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer" class="skill-tag tag-lang" style="text-decoration:none;">CSS</a>
+        <a href="https://www.rust-lang.org/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-lang" style="text-decoration:none;">Rust</a>
+        <a href="https://www.latex-project.org/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-lang" style="text-decoration:none;">LaTeX</a>
       </div>
     </div>
     <div class="skill-category reveal reveal-delay-1" data-category="tool">
@@ -1095,11 +1104,18 @@
       <div class="skill-cat-title">Tools & Environment</div>
       <div class="skill-tags">
         <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">Git/GitHub</a>
+        <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">AWS</a>
+        <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">React</a>
+        <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">Node.js</a>
+        <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">Express</a>
+        <a href="https://redis.io/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">Redis</a>
+        <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">PostgreSQL</a>
+        <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">Docker</a>
         <a href="https://www.linux.org/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">Linux</a>
+        <a href="https://powerbi.microsoft.com/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">Power BI</a>
+        <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">VS Code</a>
         <a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">IntelliJ IDEA</a>
         <a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">PyCharm</a>
-        <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">VS Code</a>
-        <a href="https://www.jetbrains.com/fleet/" target="_blank" rel="noopener noreferrer" class="skill-tag tag-tool" style="text-decoration:none;">JetBrains Fleet</a>
       </div>
     </div>
     <div class="skill-category reveal reveal-delay-2" data-category="concept">
@@ -1108,11 +1124,13 @@
       <div class="skill-tags">
         <a href="https://en.wikipedia.org/wiki/Data_structure" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">DSA</a>
         <a href="https://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">OOP</a>
+        <a href="https://en.wikipedia.org/wiki/Systems_design" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">System Design</a>
         <a href="https://en.wikipedia.org/wiki/Operating_system" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">OS</a>
         <a href="https://en.wikipedia.org/wiki/Computer_network" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">Networking</a>
-        <a href="https://en.wikipedia.org/wiki/Data_science" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">Data Science</a>
-        <a href="https://en.wikipedia.org/wiki/Database_design" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">DB Design</a>
-        <a href="https://en.wikipedia.org/wiki/Discrete_mathematics" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">Discrete Math</a>
+        <a href="https://en.wikipedia.org/wiki/Machine_learning" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">Machine Learning</a>
+        <a href="https://en.wikipedia.org/wiki/Database" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">Database Systems</a>
+        <a href="https://en.wikipedia.org/wiki/CI/CD" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">CI/CD</a>
+        <a href="https://en.wikipedia.org/wiki/Cloud_computing" target="_blank" rel="noopener noreferrer" class="skill-tag tag-concept" style="text-decoration:none;">Cloud Architecture</a>
       </div>
     </div>
     <div class="skill-category reveal reveal-delay-3" data-category="other">
@@ -1138,6 +1156,24 @@
       <span class="project-arrow">↗</span>
       <div class="project-num">01</div>
       <div class="project-title-wrap">
+        <div class="project-title">Reddit AI Debate Analyzer</div>
+        <span class="project-badge">Completed</span>
+      </div>
+      <p class="project-desc">Full-stack web app using Claude AI to score Reddit comments 0–100 for reasoning quality and generate debate summaries. Architected with Redis cache-aside, Cloudflare Worker proxy, Neon PostgreSQL, and 5 GitHub Actions CI/CD workflows enforcing 57 passing tests before every merge.</p>
+      <div class="project-tech">
+        <span class="tech-chip">React</span>
+        <span class="tech-chip">TypeScript</span>
+        <span class="tech-chip">Node.js</span>
+        <span class="tech-chip">AWS Lambda</span>
+        <span class="tech-chip">Redis</span>
+        <span class="tech-chip">Claude AI</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal reveal-delay-1" data-project="1">
+      <span class="project-arrow">↗</span>
+      <div class="project-num">02</div>
+      <div class="project-title-wrap">
         <div class="project-title">AI Multilingual Voice Assistant</div>
         <span class="project-badge in-progress">In Progress</span>
       </div>
@@ -1150,9 +1186,9 @@
       </div>
     </div>
 
-    <div class="project-card reveal reveal-delay-1" data-project="1">
+    <div class="project-card reveal reveal-delay-2" data-project="2">
       <span class="project-arrow">↗</span>
-      <div class="project-num">02</div>
+      <div class="project-num">03</div>
       <div class="project-title-wrap">
         <div class="project-title">Chat Application</div>
         <span class="project-badge">Completed</span>
@@ -1166,9 +1202,9 @@
       </div>
     </div>
 
-    <div class="project-card reveal reveal-delay-2" data-project="2">
+    <div class="project-card reveal reveal-delay-3" data-project="3">
       <span class="project-arrow">↗</span>
-      <div class="project-num">03</div>
+      <div class="project-num">04</div>
       <div class="project-title-wrap">
         <div class="project-title">Currency Converter</div>
         <span class="project-badge">Completed</span>
@@ -1181,9 +1217,9 @@
       </div>
     </div>
 
-    <div class="project-card reveal reveal-delay-3" data-project="3">
+    <div class="project-card reveal reveal-delay-4" data-project="4">
       <span class="project-arrow">↗</span>
-      <div class="project-num">04</div>
+      <div class="project-num">05</div>
       <div class="project-title-wrap">
         <div class="project-title">Algorithm Visualizer</div>
         <span class="project-badge">Completed</span>
@@ -1682,33 +1718,45 @@ const SKILL_DATA = {
       { name:'SQL/MySQL',  url:'https://www.mysql.com/',                                            logo: DI+'mysql/mysql-original.svg' },
       { name:'C++',        url:'https://isocpp.org/',                                               logo: DI+'cplusplus/cplusplus-original.svg' },
       { name:'JavaScript', url:'https://developer.mozilla.org/en-US/docs/Web/JavaScript',           logo: DI+'javascript/javascript-original.svg' },
+      { name:'TypeScript', url:'https://www.typescriptlang.org/',                                   logo: DI+'typescript/typescript-original.svg' },
       { name:'HTML',       url:'https://developer.mozilla.org/en-US/docs/Web/HTML',                 logo: DI+'html5/html5-original.svg' },
       { name:'CSS',        url:'https://developer.mozilla.org/en-US/docs/Web/CSS',                  logo: DI+'css3/css3-original.svg' },
+      { name:'Rust',       url:'https://www.rust-lang.org/',                                        logo: DI+'rust/rust-original.svg' },
+      { name:'LaTeX',      url:'https://www.latex-project.org/',                                    logo: DI+'latex/latex-original.svg' },
     ]
   },
   tool: {
     label: '02 — Skills',
     title: 'Tools & Environment',
     items: [
-      { name:'Git/GitHub',      url:'https://github.com/',                        logo: DI+'github/github-original.svg' },
-      { name:'Linux',           url:'https://www.linux.org/',                     logo: DI+'linux/linux-original.svg' },
-      { name:'IntelliJ IDEA',   url:'https://www.jetbrains.com/idea/',            logo: DI+'intellij/intellij-original.svg' },
-      { name:'PyCharm',         url:'https://www.jetbrains.com/pycharm/',         logo: DI+'pycharm/pycharm-original.svg' },
-      { name:'VS Code',         url:'https://code.visualstudio.com/',             logo: DI+'vscode/vscode-original.svg' },
-      { name:'JetBrains Fleet', url:'https://www.jetbrains.com/fleet/',           logo: DI+'jetbrains/jetbrains-original.svg' },
+      { name:'Git/GitHub',    url:'https://github.com/',                        logo: DI+'github/github-original.svg' },
+      { name:'AWS',           url:'https://aws.amazon.com/',                    logo: DI+'amazonwebservices/amazonwebservices-plain-wordmark.svg' },
+      { name:'React',         url:'https://react.dev/',                         logo: DI+'react/react-original.svg' },
+      { name:'Node.js',       url:'https://nodejs.org/',                        logo: DI+'nodejs/nodejs-original.svg' },
+      { name:'Express',       url:'https://expressjs.com/',                     logo: DI+'express/express-original.svg' },
+      { name:'Redis',         url:'https://redis.io/',                          logo: DI+'redis/redis-original.svg' },
+      { name:'PostgreSQL',    url:'https://www.postgresql.org/',                logo: DI+'postgresql/postgresql-original.svg' },
+      { name:'Docker',        url:'https://www.docker.com/',                    logo: DI+'docker/docker-original.svg' },
+      { name:'Linux',         url:'https://www.linux.org/',                     logo: DI+'linux/linux-original.svg' },
+      { name:'Power BI',      url:'https://powerbi.microsoft.com/',             logo: DI+'python/python-original.svg' },
+      { name:'VS Code',       url:'https://code.visualstudio.com/',             logo: DI+'vscode/vscode-original.svg' },
+      { name:'IntelliJ IDEA', url:'https://www.jetbrains.com/idea/',            logo: DI+'intellij/intellij-original.svg' },
+      { name:'PyCharm',       url:'https://www.jetbrains.com/pycharm/',         logo: DI+'pycharm/pycharm-original.svg' },
     ]
   },
   concept: {
     label: '02 — Skills',
     title: 'Concepts',
     items: [
-      { name:'DSA',           url:'https://en.wikipedia.org/wiki/Data_structure',               icon:'🔢' },
-      { name:'OOP',           url:'https://en.wikipedia.org/wiki/Object-oriented_programming',  icon:'🧩' },
-      { name:'OS',            url:'https://en.wikipedia.org/wiki/Operating_system',             icon:'💻' },
-      { name:'Networking',    url:'https://en.wikipedia.org/wiki/Computer_network',             icon:'🌐' },
-      { name:'Data Science',  url:'https://en.wikipedia.org/wiki/Data_science',                icon:'📊' },
-      { name:'DB Design',     url:'https://en.wikipedia.org/wiki/Database_design',             icon:'🗄️' },
-      { name:'Discrete Math', url:'https://en.wikipedia.org/wiki/Discrete_mathematics',        icon:'∑' },
+      { name:'DSA',              url:'https://en.wikipedia.org/wiki/Data_structure',               icon:'🔢' },
+      { name:'OOP',              url:'https://en.wikipedia.org/wiki/Object-oriented_programming',  icon:'🧩' },
+      { name:'System Design',    url:'https://en.wikipedia.org/wiki/Systems_design',               icon:'🏗️' },
+      { name:'OS',               url:'https://en.wikipedia.org/wiki/Operating_system',             icon:'💻' },
+      { name:'Networking',       url:'https://en.wikipedia.org/wiki/Computer_network',             icon:'🌐' },
+      { name:'Machine Learning', url:'https://en.wikipedia.org/wiki/Machine_learning',             icon:'🤖' },
+      { name:'Database Systems', url:'https://en.wikipedia.org/wiki/Database',                     icon:'🗄️' },
+      { name:'CI/CD',            url:'https://en.wikipedia.org/wiki/CI/CD',                        icon:'🔄' },
+      { name:'Cloud Architecture',url:'https://en.wikipedia.org/wiki/Cloud_computing',             icon:'☁️' },
     ]
   },
   other: {
@@ -1724,25 +1772,32 @@ const SKILL_DATA = {
 
 const PROJECT_DATA = [
   {
-    num:'01', title:'AI Multilingual Voice Assistant', badge:'In Progress', badgeClass:'in-progress',
+    num:'01', title:'Reddit AI Debate Analyzer', badge:'Completed', badgeClass:'',
+    desc:'Full-stack web app using Claude AI to score Reddit comments 0–100 for reasoning quality and generate debate summaries (positions, evidence, disagreements). Architected with Redis cache-aside (5/10-min TTLs), Cloudflare Worker proxy to bypass Reddit\'s AWS IP blocks, Neon PostgreSQL storage, and 5 GitHub Actions CI/CD workflows enforcing 57 passing tests before every merge.',
+    tech:['React','TypeScript','Node.js','AWS Lambda','Redis','Claude AI','PostgreSQL','CI/CD'],
+    github:'https://github.com/aum-2004/Reddit-AI-Debate-Analyzer',
+    live:'https://main.d5nlkn0tc4gbz.amplifyapp.com'
+  },
+  {
+    num:'02', title:'AI Multilingual Voice Assistant', badge:'In Progress', badgeClass:'in-progress',
     desc:'A cross-language voice assistant supporting multiple languages using SpeechRecognition and pyttsx3. Features modular commands for opening apps, answering queries, and performing web searches. Designed for scalability with a plug-in architecture.',
     tech:['Python','SpeechRecognition','pyttsx3','AI/ML'],
     github: null, live: null
   },
   {
-    num:'02', title:'Chat Application', badge:'Completed', badgeClass:'',
+    num:'03', title:'Chat Application', badge:'Completed', badgeClass:'',
     desc:'A real-time chat platform supporting concurrent clients with sockets and multi-threading. Includes user authentication, error handling, and message broadcasting. Benchmarked to handle multiple concurrent users with minimal latency.',
     tech:['Java','Sockets','Multi-threading','Client/Server'],
     github: null, live: null
   },
   {
-    num:'03', title:'Currency Converter', badge:'Completed', badgeClass:'',
+    num:'04', title:'Currency Converter', badge:'Completed', badgeClass:'',
     desc:'A Java-based desktop application integrating live exchange rate APIs. Structured for easy extension to support features like historical rate lookups. Clean architecture with separation of concerns.',
     tech:['Java','REST API','Desktop App'],
     github:'https://github.com/aum-2004/currency-converter', live: 'https://aum-2004.github.io/currency-converter/'
   },
   {
-    num:'04', title:'Algorithm Visualizer', badge:'Completed', badgeClass:'',
+    num:'05', title:'Algorithm Visualizer', badge:'Completed', badgeClass:'',
     desc:'An interactive tool to visualize sorting and graph algorithms step-by-step. Built with Python and Tkinter, featuring smooth animations of algorithm execution — making DSA concepts tangible and intuitive.',
     tech:['Python','Tkinter','Algorithms','Visualization'],
     github: null, live: null
