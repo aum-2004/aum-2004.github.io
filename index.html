@@ -1402,7 +1402,7 @@ const termIn  = document.getElementById('term-input');
 const termHistory = [];
 let termHistIdx = -1;
 let aiMode = false;
-let realAIKey = ['sk-ant-api03','-HI2Qp8uAgyz','UOLtbVllG1NG','-EolXtEqUC17','cKZrpDHHvoXE','tc8RlT8etAFJ','KztRRUwevaHe','06b4aRTMi58i','nQQ-AeElJAAA'].join('');
+const AI_PROXY_URL = 'https://aryan-portfolio-ai-proxy.aryan-modi.workers.dev';
 
 const JOKES = [
   "Why do programmers prefer dark mode? Because light attracts bugs.",
@@ -1578,31 +1578,22 @@ async function aiCallReal(message) {
   termOut.appendChild(thinking);
   termOut.scrollTop = termOut.scrollHeight;
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch(AI_PROXY_URL, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': realAIKey,
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true',
-      },
-      body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001',
-        max_tokens: 400,
-        system: `You are Aryan's Intelligence (A.I.), a personal AI assistant on Aryan Modi's portfolio website. Be concise and respond in plain text only (no markdown, no asterisks). Aryan is a CS student at NJIT (GPA 3.85, graduating May 2027). Skills: Python, Java, JavaScript, SQL, C++, HTML/CSS, Git, Linux. Projects: AI Voice Assistant (Python, in progress), Chat App (Java+Sockets), Currency Converter (Java), Algorithm Visualizer (Python/Tkinter). Experience: Lab Assistant at HCCC (Feb-Dec 2024), Data Assistant at Harmony Suites (Summer 2023). Open to internships in AI/ML and Backend. Email: aumodi2004@gmail.com, GitHub: aum-2004, LinkedIn: aumodi.`,
-        messages: [{ role: 'user', content: message }],
-      }),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message }),
     });
     const data = await res.json();
     termOut.removeChild(thinking);
-    if (data.error) throw new Error(data.error.message);
-    const lines = data.content[0].text.split('\n').filter(l => l.trim());
+    if (!res.ok || data.error) throw new Error(data.error || 'AI proxy error');
+    const lines = data.text.split('\n').filter(l => l.trim());
     for (let i = 0; i < lines.length; i++) {
       await typewriter(i === 0 ? 'acc' : '', lines[i]);
     }
   } catch (err) {
     if (termOut.contains(thinking)) termOut.removeChild(thinking);
-    termAddLine('err', `Error: ${err.message}`);
+    // Fall back to canned responses rather than showing a raw error to visitors
+    aiSimulate(message).forEach((l, i) => termAddLine(i === 0 ? 'acc' : '', l));
   }
   termAddBlank();
   termOut.scrollTop = termOut.scrollHeight;
@@ -1628,12 +1619,8 @@ termIn.addEventListener('keydown', e => {
         termAddLine('', 'Exited A.I. mode. Back to terminal.');
         termAddBlank();
         termOut.scrollTop = termOut.scrollHeight;
-      } else if (realAIKey) {
-        aiCallReal(raw);
       } else {
-        aiSimulate(raw).forEach((l, i) => termAddLine(i === 0 ? 'acc' : '', l));
-        termAddBlank();
-        termOut.scrollTop = termOut.scrollHeight;
+        aiCallReal(raw);
       }
       return;
     }
@@ -1645,7 +1632,7 @@ termIn.addEventListener('keydown', e => {
       document.querySelector('.term-input-prompt').innerHTML = 'A.I. >&nbsp;';
       document.querySelector('.term-title').textContent = "Aryan's Intelligence ~ A.I.";
       termIn.placeholder = 'ask anything...';
-      termAddLine('acc', "Aryan's Intelligence — Powered by Claude");
+      termAddLine('acc', "Aryan's Intelligence");
       termAddLine('hi', '● Ask me anything about Aryan.');
       termAddLine('', 'Type "exit" to return to terminal.');
       termAddBlank();
