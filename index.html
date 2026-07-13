@@ -703,6 +703,7 @@
   .term-out.hi  { color: var(--accent3); padding-left: 0; }
   .term-out.err { color: #ff5f57; padding-left: 0; }
   .term-out.acc { color: #e4e4e7; padding-left: 0; }
+  .term-out.ai-reply { color: #ef4444; padding-left: 0; }
   .term-input-row {
     display: flex;
     align-items: center;
@@ -1588,12 +1589,12 @@ async function aiCallReal(message) {
     if (!res.ok || data.error) throw new Error(data.error || 'AI proxy error');
     const lines = data.text.split('\n').filter(l => l.trim());
     for (let i = 0; i < lines.length; i++) {
-      await typewriter(i === 0 ? 'acc' : '', lines[i]);
+      await typewriter('ai-reply', lines[i]);
     }
   } catch (err) {
     if (termOut.contains(thinking)) termOut.removeChild(thinking);
     // Fall back to canned responses rather than showing a raw error to visitors
-    aiSimulate(message).forEach((l, i) => termAddLine(i === 0 ? 'acc' : '', l));
+    aiSimulate(message).forEach((l) => termAddLine('ai-reply', l));
   }
   termAddBlank();
   termOut.scrollTop = termOut.scrollHeight;
