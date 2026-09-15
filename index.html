@@ -999,7 +999,7 @@
       <div class="stat-label">GPA @ NJIT</div>
     </div>
     <div class="stat">
-      <div class="stat-number">4+</div>
+      <div class="stat-number" id="project-count">6</div>
       <div class="stat-label">Projects</div>
     </div>
     <div class="stat">
@@ -1153,9 +1153,28 @@
   <h2 class="section-title reveal">What I've <span>Built</span></h2>
   <div class="projects-grid">
 
-    <div class="project-card reveal" data-project="0">
+    <div class="project-card reveal" data-project="0" role="button" tabindex="0" aria-label="View Crazy Chips project details">
       <span class="project-arrow">↗</span>
       <div class="project-num">01</div>
+      <div class="project-title-wrap">
+        <div class="project-title">Crazy Chips</div>
+        <span class="project-badge">Live · Updates Coming Soon</span>
+      </div>
+      <p class="project-desc">Full-stack food ordering platform with Google/Apple sign-in, menu browsing, cart and Stripe checkout, order tracking, promo codes, and loyalty rewards. Led development across 17 pages, 23 API endpoints, and 47 reusable React components, including an admin portal for orders, menus, and media.</p>
+      <div class="project-tech">
+        <span class="tech-chip">Next.js</span>
+        <span class="tech-chip">React</span>
+        <span class="tech-chip">TypeScript</span>
+        <span class="tech-chip">Prisma</span>
+        <span class="tech-chip">Cloudflare</span>
+        <span class="tech-chip">Stripe</span>
+      </div>
+    </div>
+
+
+    <div class="project-card reveal" data-project="1">
+      <span class="project-arrow">↗</span>
+      <div class="project-num">02</div>
       <div class="project-title-wrap">
         <div class="project-title">Reddit AI Debate Analyzer</div>
         <span class="project-badge">Completed</span>
@@ -1171,9 +1190,9 @@
       </div>
     </div>
 
-    <div class="project-card reveal reveal-delay-1" data-project="1">
+    <div class="project-card reveal reveal-delay-1" data-project="2">
       <span class="project-arrow">↗</span>
-      <div class="project-num">02</div>
+      <div class="project-num">03</div>
       <div class="project-title-wrap">
         <div class="project-title">AI Multilingual Voice Assistant</div>
         <span class="project-badge in-progress">In Progress</span>
@@ -1187,9 +1206,9 @@
       </div>
     </div>
 
-    <div class="project-card reveal reveal-delay-2" data-project="2">
+    <div class="project-card reveal reveal-delay-2" data-project="3">
       <span class="project-arrow">↗</span>
-      <div class="project-num">03</div>
+      <div class="project-num">04</div>
       <div class="project-title-wrap">
         <div class="project-title">Chat Application</div>
         <span class="project-badge">Completed</span>
@@ -1203,9 +1222,9 @@
       </div>
     </div>
 
-    <div class="project-card reveal reveal-delay-3" data-project="3">
+    <div class="project-card reveal reveal-delay-3" data-project="4">
       <span class="project-arrow">↗</span>
-      <div class="project-num">04</div>
+      <div class="project-num">05</div>
       <div class="project-title-wrap">
         <div class="project-title">Currency Converter</div>
         <span class="project-badge">Completed</span>
@@ -1218,9 +1237,9 @@
       </div>
     </div>
 
-    <div class="project-card reveal reveal-delay-4" data-project="4">
+    <div class="project-card reveal reveal-delay-4" data-project="5">
       <span class="project-arrow">↗</span>
-      <div class="project-num">05</div>
+      <div class="project-num">06</div>
       <div class="project-title-wrap">
         <div class="project-title">Algorithm Visualizer</div>
         <span class="project-badge">Completed</span>
@@ -1447,19 +1466,11 @@ const COMMANDS = {
     { t:'hi',  s:'Concepts:' },
     { t:'out', s:'  DSA  OOP  OS  Networking  Data Science  DB Design' },
   ],
-  projects: () => [
-    { t:'hi',  s:'01 — AI Multilingual Voice Assistant   [In Progress]' },
-    { t:'out', s:'     Python · SpeechRecognition · pyttsx3' },
+  projects: () => PROJECT_DATA.flatMap(p => [
+    { t:'hi', s:`${p.num} — ${p.title} [${p.badge}]` },
+    { t:'out', s:`     ${p.tech.join(' · ')}` },
     { t:'out', s:'' },
-    { t:'hi',  s:'02 — Chat Application                  [Completed]' },
-    { t:'out', s:'     Java · Sockets · Multi-threading' },
-    { t:'out', s:'' },
-    { t:'hi',  s:'03 — Currency Converter                [Completed]' },
-    { t:'out', s:'     Java · REST API · Desktop App' },
-    { t:'out', s:'' },
-    { t:'hi',  s:'04 — Algorithm Visualizer              [Completed]' },
-    { t:'out', s:'     Python · Tkinter · Visualization' },
-  ],
+  ]),
   contact: () => [
     { t:'acc', s:"Let's connect!" },
     { t:'out', s:'Email     aumodi2004@gmail.com' },
@@ -1540,7 +1551,7 @@ function aiSimulate(input) {
   if (/skills?|tech|stack|languages?|programm|coding|what (does he|can he|does aryan) know/.test(q))
     return ["Aryan's tech stack:", "  Languages  →  Python, Java, JavaScript, SQL, C++, HTML/CSS", "  Tools      →  Git, Linux, IntelliJ, PyCharm, VS Code, Fleet", "  Concepts   →  DSA, OOP, OS, Networking, Data Science, DB Design"];
   if (/projects?|what has he built|what did he build|what has he made|what has he created/.test(q))
-    return ["Aryan's projects:", "  01 · AI Multilingual Voice Assistant  [In Progress]  →  Python", "  02 · Chat Application                [Completed]     →  Java", "  03 · Currency Converter              [Completed]     →  Java", "  04 · Algorithm Visualizer            [Completed]     →  Python"];
+    return ["Aryan's projects:", ...PROJECT_DATA.map(p => `  ${p.num} · ${p.title} [${p.badge}] → ${p.tech.join(' · ')}`)];
   if (/gpa|grades?|school|education|college|njit|university|academic/.test(q))
     return ["Academic record:", "  NJIT  →  3.85 GPA · BS CS · Expected May 2027", "  HCCC  →  3.69 GPA · CS Coursework · 2024", "  NJCU  →  4.00 GPA · CS Coursework · 2023"];
   if (/contact|email|reach|hire|linkedin|github|phone/.test(q))
@@ -1760,37 +1771,46 @@ const SKILL_DATA = {
 
 const PROJECT_DATA = [
   {
-    num:'01', title:'Reddit AI Debate Analyzer', badge:'Completed', badgeClass:'',
+    num:'01', title:'Crazy Chips', badge:'Live · Updates Coming Soon', badgeClass:'',
+    desc:'Full-stack food ordering platform (June 2026–present). Led development as the primary contributor, with 137 of 155 commits across 17 pages, 23 API endpoints, and 47 reusable React components. Built Google/Apple OAuth sign-in, menu browsing, cart and checkout, Stripe payments and webhooks, order tracking, promo codes, and loyalty rewards. Developed an admin portal for orders, menus, and media, integrating Cloudflare D1/R2, NextAuth, Pusher, Upstash Redis, and Resend.',
+    tech:['Next.js','React','TypeScript','Prisma','Cloudflare D1/R2','Stripe','NextAuth','Pusher','Upstash Redis','Resend'],
+    github:'https://github.com/aum-2004/crazy-chips',
+    live:'https://crazychips.uk/'
+  },
+  {
+    num:'02', title:'Reddit AI Debate Analyzer', badge:'Completed', badgeClass:'',
     desc:'Full-stack web app using Claude AI to score Reddit comments 0–100 for reasoning quality and generate debate summaries (positions, evidence, disagreements). Architected with Redis cache-aside (5/10-min TTLs), Cloudflare Worker proxy to bypass Reddit\'s AWS IP blocks, Neon PostgreSQL storage, and 5 GitHub Actions CI/CD workflows enforcing 57 passing tests before every merge.',
     tech:['React','TypeScript','Node.js','AWS Lambda','Redis','Claude AI','PostgreSQL','CI/CD'],
     github:'https://github.com/aum-2004/Reddit-AI-Debate-Analyzer',
     live:'https://main.d5nlkn0tc4gbz.amplifyapp.com'
   },
   {
-    num:'02', title:'AI Multilingual Voice Assistant', badge:'In Progress', badgeClass:'in-progress',
+    num:'03', title:'AI Multilingual Voice Assistant', badge:'In Progress', badgeClass:'in-progress',
     desc:'A cross-language voice assistant supporting multiple languages using SpeechRecognition and pyttsx3. Features modular commands for opening apps, answering queries, and performing web searches. Designed for scalability with a plug-in architecture.',
     tech:['Python','SpeechRecognition','pyttsx3','AI/ML'],
     github: null, live: null
   },
   {
-    num:'03', title:'Chat Application', badge:'Completed', badgeClass:'',
+    num:'04', title:'Chat Application', badge:'Completed', badgeClass:'',
     desc:'A real-time chat platform supporting concurrent clients with sockets and multi-threading. Includes user authentication, error handling, and message broadcasting. Benchmarked to handle multiple concurrent users with minimal latency.',
     tech:['Java','Sockets','Multi-threading','Client/Server'],
     github: null, live: null
   },
   {
-    num:'04', title:'Currency Converter', badge:'Completed', badgeClass:'',
+    num:'05', title:'Currency Converter', badge:'Completed', badgeClass:'',
     desc:'A Java-based desktop application integrating live exchange rate APIs. Structured for easy extension to support features like historical rate lookups. Clean architecture with separation of concerns.',
     tech:['Java','REST API','Desktop App'],
     github:'https://github.com/aum-2004/currency-converter', live: 'https://aum-2004.github.io/currency-converter/'
   },
   {
-    num:'05', title:'Algorithm Visualizer', badge:'Completed', badgeClass:'',
+    num:'06', title:'Algorithm Visualizer', badge:'Completed', badgeClass:'',
     desc:'An interactive tool to visualize sorting and graph algorithms step-by-step. Built with Python and Tkinter, featuring smooth animations of algorithm execution — making DSA concepts tangible and intuitive.',
     tech:['Python','Tkinter','Algorithms','Visualization'],
     github: null, live: null
   }
 ];
+
+document.getElementById('project-count').textContent = PROJECT_DATA.length;
 
 const overlay   = document.getElementById('modal-overlay');
 const modalContent = document.getElementById('modal-content');
@@ -1831,6 +1851,12 @@ document.querySelectorAll('.skill-category[data-category]').forEach(card => {
 
 // Project card click
 document.querySelectorAll('.project-card[data-project]').forEach(card => {
+  card.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      card.click();
+    }
+  });
   card.addEventListener('click', () => {
     const p = PROJECT_DATA[parseInt(card.dataset.project)];
     if (!p) return;
